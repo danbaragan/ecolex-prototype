@@ -14,6 +14,9 @@ def first(obj, default=None):
 
 
 class ObjectNormalizer:
+    DELIMITER = '; '
+    DATE_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
+
     def __init__(self, solr, hl):
         self.type = solr['type']
         self.solr = solr
@@ -46,7 +49,7 @@ class ObjectNormalizer:
         for date_field in self.DATE_FIELDS:
             try:
                 return datetime.strptime(first(self.solr.get(date_field)),
-                                         '%Y-%m-%dT%H:%M:%SZ').date()
+                                         self.DATE_FORMAT).date()
             except:
                 continue
         return ""
@@ -67,7 +70,7 @@ class ObjectNormalizer:
             if 'date' in type:
                 try:
                     value = datetime.strptime(first(value),
-                                              '%Y-%m-%dT%H:%M:%SZ').date()
+                                              self.DATE_FORMAT).date()
                 except:
                     pass
             entry['value'] = value
@@ -80,6 +83,15 @@ class ObjectNormalizer:
     def source(self):
         source = DOC_SOURCES.get(self.type, "Unknown source")
         return source
+
+    def get_str(self, field):
+        value = self.solr.get(field, '')
+        if field in self.DATE_FIELDS:
+            date_value = datetime.strptime(first(value), self.DATE_FORMAT)
+            value = date_value.strftime('%Y-%m-%d')
+        elif isinstance(value, list):
+            value = self.DELIMITER.join(value)
+        return value
 
     __repr__ = title
 
@@ -136,7 +148,7 @@ class Treaty(ObjectNormalizer):
     def entry_into_force(self):
         return datetime.strptime(
             first(self.solr.get(
-                'trEntryIntoForceDate')), '%Y-%m-%dT%H:%M:%SZ').date()
+                'trEntryIntoForceDate')), self.DATE_FORMAT).date()
 
     def participants(self):
         PARTY_MAP = OrderedDict((

@@ -6,19 +6,19 @@ from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, View
 from django.conf import settings
 import logging
+from uuid import uuid4
 
 from contrib.import_legislation_fao import harvest_file
+from ecolex.definitions import (
+    DOC_TYPE, DOC_TYPE_FILTER_MAPPING, FIELD_TO_FACET_MAPPING, SOLR_FIELDS,
+    OPERATION_FIELD_MAPPING,
+)
+from ecolex.export import get_exporter
+from ecolex.forms import SearchForm
 from ecolex.search import (
     search, get_document, get_all_treaties, get_documents_by_field,
     get_treaty_by_informea_id, get_referenced_treaties
 )
-from ecolex.forms import SearchForm
-from ecolex.definitions import (
-    DOC_TYPE, DOC_TYPE_FILTER_MAPPING, FIELD_TO_FACET_MAPPING, SOLR_FIELDS,
-    OPERATION_FIELD_MAPPING
-)
-
-from uuid import uuid4
 
 
 logger = logging.getLogger(__name__)
@@ -392,6 +392,19 @@ class FaoFeedView(View):
             'message': response
         }
         return JsonResponse(data)
+
+
+class ExportView(View):
+    def get(self, request, **kwargs):
+        response_format = kwargs['format']
+        filter_fields = ['type', 'id']
+        filters = {field: request.GET.getlist(field)
+                   for field in filter_fields
+                   if field in request.GET}
+        results = search('*', filters=filters, fields=SOLR_FIELDS)
+        exporter = get_exporter(response_format)(results)
+        return exporter.get_response()
+        #return JsonResponse({'count': results.count()})
 
 
 def debug(request):

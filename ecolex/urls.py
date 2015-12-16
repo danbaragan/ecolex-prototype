@@ -4,7 +4,7 @@ from .views import (
     ResultDetailsParticipants, debug, SearchResultsAjax, DecMeetingView,
     TreatyParticipantView, DecisionDetails, TreatyDetails, LiteratureDetails,
     CourtDecisionDetails, ResultDetailsLiteratures, FaoFeedView,
-    ResultDetailsCourtDecisions, LegislationDetails
+    ResultDetailsCourtDecisions, LegislationDetails, ExportView,
 )
 
 
@@ -41,4 +41,5 @@ urlpatterns = patterns(
         name="page"),
     url(r'^fao/$', FaoFeedView.as_view(), name='fao_feeder'),
     url(r'^_debug', debug, name="debug"),
+    url(r'^export/(?P<format>\w+)/$', ExportView.as_view(), name='export'),
 )

@@ -1,17 +1,23 @@
+TREATY = 'treaty'
+COP_DECISION = 'decision'
+COURT_DECISION = 'court_decision'
+LITERATURE = 'literature'
+LEGISLATION = 'legislation'
+
 DOC_TYPE = (
-    ('treaty', "Treaty"),
-    ('decision', "Decision"),
-    ('literature', "Literature"),
-    ('court_decision', "Court Decision"),
-    ('legislation', "Legislation"),
+    (TREATY, "Treaty"),
+    (COP_DECISION, "Decision"),
+    (LITERATURE, "Literature"),
+    (COURT_DECISION, "Court Decision"),
+    (LEGISLATION, "Legislation"),
 )
 
 DOC_SOURCES = {
-    'treaty': 'IUCN',
-    'decision': 'InforMEA',
-    'literature': 'IUCN',
-    'court_decision': 'InforMEA',
-    'legislation': 'FAO',
+    TREATY: 'IUCN',
+    COP_DECISION: 'InforMEA',
+    LITERATURE: 'IUCN',
+    COURT_DECISION: 'InforMEA',
+    LEGISLATION: 'FAO',
 }
 
 TREATY_FILTERS = {
@@ -47,11 +53,11 @@ LEGISLATION_FILTERS = {
 }
 
 DOC_TYPE_FILTER_MAPPING = {
-    'treaty': TREATY_FILTERS,
-    'decision': DECISION_FILTERS,
-    'literature': LITERATURE_FILTERS,
-    'court_decision': COURT_DECISION_FILTERS,
-    'legislation': LEGISLATION_FILTERS,
+    TREATY: TREATY_FILTERS,
+    COP_DECISION: DECISION_FILTERS,
+    LITERATURE: LITERATURE_FILTERS,
+    COURT_DECISION: COURT_DECISION_FILTERS,
+    LEGISLATION: LEGISLATION_FILTERS,
 }
 
 FIELD_TO_FACET_MAPPING = {
@@ -95,6 +101,88 @@ OPERATION_FIELD_MAPPING = {
     'language_op': 'language',
 }
 
+FIELDS_BY_TYPE = {
+    TREATY: [
+        'id', 'type', 'source', 'trTitleOfText', 'trJurisdiction',
+        'trStatus', 'trPlaceOfAdoption', 'trDateOfText', 'trDateOfEntry',
+        'trDateOfModification', 'trPaperTitleOfText', 'trPaperTitleOfTextFr',
+    ],
+    COP_DECISION: [
+        'id', 'type', 'source', 'decTitleOfText', 'decStatus', 'decPublishDate',
+        'decUpdateDate', 'decNumber',
+    ],
+    LITERATURE: [
+        'id', 'type', 'source',
+        'litLongTitle', 'litLongTitle_fr', 'litLongTitle_sp',
+        'litLongTitle_other',
+        'litPaperTitleOfText', 'litPaperTitleOfText_fr',
+        'litPaperTitleOfText_sp',
+        'litPaperTitleOfText_other',
+        'litTitleOfTextShort', 'litTitleOfTextShort_fr',
+        'litTitleOfTextShort_sp',
+        'litTitleOfTextShort_other',
+        'litTitleOfTextTransl', 'litTitleOfTextTransl_fr',
+        'litTitleOfTextTransl_sp',
+        'litDateOfEntry', 'litDateOfModifcation', 'litAbstract',
+        'litTypeOfText',
+        'litScope', 'litScope_fr', 'litScope_sp',
+        'litAuthor', 'litCorpAuthor',
+        'litPublisher', 'litPublPlace', 'litDateOfText',
+        'litKeyword', 'litSeriesFlag',
+        'litCountry', 'litRegion', 'litSubject', 'litLanguageOfDocument',
+    ],
+    COURT_DECISION: [
+        'id', 'type', 'source',
+        'cdTitleOfText',
+        'cdAbstract',
+        'cdAlternativeRecordId',
+        'cdSeatOfCourt',
+        'cdCountry',
+        'cdCourtDecisionIdNumber',
+        'cdCourtDecisionSubdivision',
+        'cdCourtName',
+        'cdDateOfEntry',
+        'cdDateOfModification',
+        'cdStatusOfDecision',
+        'cdSubject',
+        'cdEcolexUrl',
+        'cdFaolexUrl',
+        'cdFiles',
+        'cdInformeaTags',
+        'cdInternetReference',
+        'cdIsisNumber',
+        'cdJurisdiction',
+        'cdJustices',
+        'cdNumberOfPages',
+        'cdOriginalId',
+        'cdReferenceNumber',
+        'cdReferenceToLegislation',
+        'cdRelatedUrl',
+        'cdLanguageOfDocument',
+        'cdTerritorialSubdivision',
+        'cdTypeOfText',
+        'cdLinkToFullText',
+        'cdNotes',
+        'cdAbstractOther',
+        'cdAvailableIn',
+        'cdCourtDecisionReference',
+        'cdKeywords',
+        'cdFaolexReference',
+        'cdInstance',
+        'cdOfficialPublication',
+        'cdRegion',
+        'cdTitleOfTextOther',
+        'cdTitleOfTextShort',
+        'cdTreatyReference',
+        'cdUrlOther',
+        'cdDateOfText',
+    ],
+    LEGISLATION: [
+        'id', 'type', 'source',
+        'legTitle', 'legLongTitle', 'legCountry_en',
+        'legDate', 'legStatus', 'legTerritorialSubdivision',
+    ],
+}
 
 SOLR_FIELDS = [
     'id', 'type', 'source', 'trTitleOfText', 'trJurisdiction_en', 'trStatus',
