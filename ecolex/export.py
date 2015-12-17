@@ -50,8 +50,8 @@ class ExcelExporter(Exporter):
         wb = Workbook()
         wb.remove_sheet(wb.active)
 
-        for result in self.results:
-            doc_type = result.type
+        for document in self.documents:
+            doc_type = document.type
             sheet_title = sheet_names[doc_type]
             fields = FIELDS_BY_TYPE[doc_type]
 
@@ -60,7 +60,7 @@ class ExcelExporter(Exporter):
                 sheet.append(fields)
 
             sheet = wb[sheet_title]
-            sheet.append([result.get_str(field) for field in fields])
+            sheet.append([document.get_str(field) for field in fields])
 
         return wb
 

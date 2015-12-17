@@ -85,7 +85,9 @@ class ObjectNormalizer:
         return source
 
     def get_str(self, field):
-        value = self.solr.get(field, '')
+        value = self.solr.get(field)
+        if not value:
+            return ''
         if field in self.DATE_FIELDS:
             date_value = datetime.strptime(first(value), self.DATE_FORMAT)
             value = date_value.strftime('%Y-%m-%d')

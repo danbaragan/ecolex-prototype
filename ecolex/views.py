@@ -401,10 +401,9 @@ class ExportView(View):
         filters = {field: request.GET.getlist(field)
                    for field in filter_fields
                    if field in request.GET}
-        results = search('*', filters=filters, fields=SOLR_FIELDS)
+        results = search('*', filters=filters, fields='*', rows=20000)
         exporter = get_exporter(response_format)(results)
         return exporter.get_response()
-        #return JsonResponse({'count': results.count()})
 
 
 def debug(request):
