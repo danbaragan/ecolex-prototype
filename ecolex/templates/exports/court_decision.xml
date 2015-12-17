@@ -1,0 +1,148 @@
+<document>
+  <db>cou</db>
+  <isisMfn>{{ document.solr.cdIsisNumber }}</isisMfn>
+  <id>{{ document.solr.cdOriginalId }}</id>
+  <id2>
+    <![CDATA[{{ document.solr.cdAlternativeRecordId }}]]>
+  </id2>
+  <dateOfEntry>{{ document.solr.cdDateOfEntry }}</dateOfEntry>
+  <dateOfModification>{{ document.solr.cdDateOfModification }}</dateOfModification>
+  <dateOfText>{{ document.solr.cdDateOfText }}</dateOfText>
+  <titleOfText>
+    <![CDATA[{{ document.solr.cdTitleOfText }}]]>
+  </titleOfText>
+  <titleOfTextShort>
+    <![CDATA[{{ document.solr.cdTitleOfTextShort }}]]>
+  </titleOfTextShort>
+  <!--
+  <titleOfTextShort_fr_FR>
+    <![CDATA[{{ document.solr.cdTitleOfTextShort_fr }}]]>
+  </titleOfTextShort_fr_FR>
+  <titleOfTextShort_es_ES>
+    <![CDATA[{{ document.solr.cdTitleOfTextShort_es }}]]>
+  </titleOfTextShort_es_ES>
+  -->
+  <typeOfText>{{ document.solr.cdTypeOfText }}</typeOfText>
+  <country>
+    <![CDATA[{{ document.solr.cdCountry_en }}]]>
+  </country>
+  <country_fr_FR>
+    <![CDATA[{{ document.solr.cdCountry_fr }}]]>
+  </country_fr_FR>
+  <country_es_ES>
+    <![CDATA[{{ document.solr.cdCountry_es }}]]>
+  <country>
+    <![CDATA[{{ document.solr.cdCountry_en }}]]>
+  </country>
+  </country_es_ES>
+  <territorialSubdivision>
+    <![CDATA[{{ document.solr.cdTerritorialSubdivision }}]]>
+  </territorialSubdivision>
+  {% for subject in document.solr.cdSubject %}
+  <subject>
+    <![CDATA[{{ subject }}]]>
+  </subject>
+  {% endfor %}
+  <!--
+  <subject_fr_FR>
+      <![CDATA[Ressources minérales]]>
+  </subject_fr_FR>
+  <subject_es_ES>
+      <![CDATA[Recursos minerales]]>
+  </subject_es_ES>
+  -->
+  <languageOfDocument>{{ document.solr.cdLanguageOfDocument }}</languageOfDocument>
+  <!--
+  <languageOfDocument_fr_FR>Anglais</languageOfDocument_fr_FR>
+  <languageOfDocument_es_ES>Inglés</languageOfDocument_es_ES>
+  -->
+  <statusOfDecision>{{ document.solr.cdStatusOfDecision }}</statusOfDecision>
+  <courtName>
+    <![CDATA[{{ document.solr.cdCourtName }}]]>
+  </courtName>
+  <courtJurisdiction>{{ document.solr.cdJurisdiction }}</courtJurisdiction>
+  <seatOfCourt>
+    <![CDATA[{{ document.solr.cdSeatOfCourt_en }}]]>
+  </seatOfCourt>
+  <seatOfCourt_fr_FR>
+    <![CDATA[{{ document.solr.cdSeatOfCourt_fr }}]]>
+  </seatOfCourt_fr_FR>
+  <seatOfCourt_es_ES>
+    <![CDATA[{{ document.solr.cdSeatOfCourt_es }}]]>
+  </seatOfCourt_es_ES>
+  {% for justice in document.solr.cdJustices %}
+  <justice>
+    <![CDATA[{{ justice }}]]>
+  </justice>
+  {% endfor %}
+  <dateOfText>{{ document.solr.cdDateOfText }}</dateOfText>
+  <referenceNumber>
+    <![CDATA[{{ document.solr.cdReferenceNumber }}]]>
+  </referenceNumber>
+  <numberOfPages>{{ document.solr.cdNumberOfPages }}</numberOfPages>
+  <linkToFullText>
+    <![CDATA[{{ document.solr.cdLinkToFullText_en }}]]>
+  </linkToFullText>
+  <linkToFullText_fr_FR>
+    <![CDATA[{{ document.solr.cdLinkToFullText_fr }}]]>
+  </linkToFullText_fr_FR>
+  <linkToFullText_es_ES>
+    <![CDATA[{{ document.solr.cdLinkToFullText_es }}]]>
+  </linkToFullText_es_ES>
+  <availableIn>{{ document.solr.cdAvailableIn }}</availableIn>
+  <internetReference>
+    <![CDATA[{{ document.solr.cdInternetReference_en }}]]>
+  </internetReference>
+  <internetReference_fr_FR>
+    <![CDATA[{{ document.solr.cdInternetReference_fr }}]]>
+  </internetReference_fr_FR>
+  <internetReference_es_ES>
+    <![CDATA[{{ document.solr.cdInternetReference_es }}]]>
+  </internetReference_es_ES>
+  <relatedWebSite>
+    <![CDATA[{{ document.solr.cdRelatedUrl_en }}]]>
+  </relatedWebSite>
+  <relatedWebSite_fr_FR>
+    <![CDATA[{{ document.solr.cdRelatedUrl_fr }}]]>
+  </relatedWebSite_fr_FR>
+  <relatedWebSite_es_ES>
+    <![CDATA[{{ document.solr.cdRelatedUrl_es }}]]>
+  </relatedWebSite_es_ES>
+  {% for keyword in document.solr.cdKeywords %}
+  <keyword>
+    <![CDATA[{{ keyword }}]]>
+  </keyword>
+  {% endfor %}
+  <!--
+  <keyword_fr_FR>
+      <![CDATA[exploitation minière]]>
+  </keyword_fr_FR>
+  <keyword_es_ES>
+      <![CDATA[minería]]>
+  </keyword_es_ES>
+  -->
+  <referenceToCourtDecision>
+    <![CDATA[{{ document.solr.cdCourtDecisionReference }}]]>
+  </referenceToCourtDecision>
+  <referenceToFaolex>
+    <![CDATA[{{ document.solr.cdFaolexReference }}]]>
+  </referenceToFaolex>
+  <referenceToTreaties>
+    <![CDATA[{{ document.solr.cdTreatyReference }}]]>
+  </referenceToTreaties>
+  <instance>
+    <![CDATA[{{ document.solr.cdInstance }}]]>
+  </instance>
+  <abstract>
+    <![CDATA[{{ document.solr.cdAbstract_en }}]]>
+  </abstract>
+  <abstract_fr_FR>
+    <![CDATA[{{ document.solr.cdAbstract_fr }}]]>
+  </abstract_fr_FR>
+  <abstract_es_ES>
+    <![CDATA[{{ document.solr.cdAbstract_es }}]]>
+  </abstract_es_ES>
+  <abstractOther>
+    <![CDATA[{{ document.solr.cdAbstractOther }}]]>
+  </abstractOther>
+</document>

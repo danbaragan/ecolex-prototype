@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+{% for document in documents %}
+  {% with template_name='exports/'|add:document.type|add:'.xml' %}
+    {% include template_name %}
+  {% endwith %}
+{% endfor %}
