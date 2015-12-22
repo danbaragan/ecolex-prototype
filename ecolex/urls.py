@@ -41,5 +41,5 @@ urlpatterns = patterns(
         name="page"),
     url(r'^fao/$', FaoFeedView.as_view(), name='fao_feeder'),
     url(r'^_debug', debug, name="debug"),
-    url(r'^export/(?P<format>\w+)/$', ExportView.as_view(), name='export'),
+    url(r'^export/$', ExportView.as_view(), name='export'),
 )

@@ -1,6 +1,7 @@
 <li class="search-result">
 
   <h3 class="search-result-title">
+    <input type="checkbox" class="export-id" value="{{ result.id }}">
     <a href="{{ result.details_url }}"
        title="{{ result.title|safe|striptags }}">{{ result.title|safe }}</a>
   </h3>

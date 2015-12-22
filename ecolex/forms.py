@@ -1,4 +1,5 @@
-from django.forms import Form, CharField, MultipleChoiceField, TextInput
+from django.forms import (
+    Form, CharField, MultipleChoiceField, TextInput, ChoiceField)
 
 from ecolex.definitions import DOC_TYPE, DOC_TYPE_FILTER_MAPPING
 
@@ -71,3 +72,18 @@ class SearchForm(Form):
 
     def has_court_decision(self):
         return self._has_document_type('court_decision')
+
+
+class ExportForm(Form):
+    EXPORT_OPTIONS = [
+        ('id', 'Export selected items'),
+        ('type', 'Export by type'),
+    ]
+    FORMAT_OPTIONS = [
+        ('xls', 'Excel'),
+        ('xml', 'XML'),
+    ]
+    export_by = ChoiceField(choices=EXPORT_OPTIONS)
+    doc_type = ChoiceField(choices=DOC_TYPE)
+    format = ChoiceField(choices=FORMAT_OPTIONS)
+    doc_id = MultipleChoiceField()

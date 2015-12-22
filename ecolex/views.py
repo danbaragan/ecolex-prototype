@@ -14,7 +14,7 @@ from ecolex.definitions import (
     OPERATION_FIELD_MAPPING,
 )
 from ecolex.export import get_exporter
-from ecolex.forms import SearchForm
+from ecolex.forms import SearchForm, ExportForm
 from ecolex.search import (
     search, get_document, get_all_treaties, get_documents_by_field,
     get_treaty_by_informea_id, get_referenced_treaties
@@ -70,6 +70,7 @@ class SearchView(TemplateView):
         data = self._set_form_defaults(dict(self.request.GET))
 
         ctx['form'] = self.form = SearchForm(data=data)
+        ctx['export_form'] = ExportForm()
         ctx['debug'] = settings.DEBUG
         ctx['text_suggestion'] = settings.TEXT_SUGGESTION
         self.query = self.form.data.get('q', '').strip() or '*'
@@ -396,13 +397,19 @@ class FaoFeedView(View):
 
 class ExportView(View):
     def get(self, request, **kwargs):
-        response_format = kwargs['format']
-        filter_fields = ['type', 'id']
-        filters = {field: request.GET.getlist(field)
-                   for field in filter_fields
-                   if field in request.GET}
+        format = request.GET.get('format')
+        export_by = request.GET.get('export_by')
+
+        if export_by == 'id':
+            field, get_param = 'id', 'doc_id'
+        elif export_by == 'type':
+            field, get_param = 'type', 'doc_type'
+
+        filters = {
+            field: request.GET.getlist(get_param),
+        }
         results = search('*', filters=filters, fields='*', rows=20000)
-        exporter = get_exporter(response_format)(results)
+        exporter = get_exporter(format)(results)
         return exporter.get_response()
 
 

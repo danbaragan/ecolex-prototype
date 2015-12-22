@@ -32,6 +32,13 @@
 
 <hr>
 
+<form action="{% url 'export' %}" method="get">
+    {{ export_form.export_by }}
+    {{ export_form.doc_type }}
+    {{ export_form.format }}
+    <div style="display:none"> {{ export_form.doc_id }} </div>
+    <button class="btn btn-success" type="submit">Export</button>
+</form>
 <!-- To do -->
 <!-- <button data-toggle="offcanvas" data-target="#filters" data-canvas="body"></button> -->
 
