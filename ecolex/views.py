@@ -16,8 +16,8 @@ from ecolex.definitions import (
 from ecolex.export import get_exporter
 from ecolex.forms import SearchForm, ExportForm
 from ecolex.search import (
-    search, get_document, get_all_treaties, get_documents_by_field,
-    get_treaty_by_informea_id, get_referenced_treaties
+    search, get_document, get_documents_by_field, get_treaty_by_informea_id,
+    get_referenced_treaties
 )
 
 

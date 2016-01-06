@@ -171,7 +171,7 @@ class Treaty(ObjectNormalizer):
             ('partyDateOfWithdrawal', 'withdrawal'),
         ))
 
-        clean = lambda d: d if d != '0002-11-30T00:00:00Z' else Nogetne
+        clean = lambda d: d if d != '0002-11-30T00:00:00Z' else None
         data = OrderedDict()
         for field, event in PARTY_MAP.items():
             values = [clean(v) for v in self.solr.get(field, [])]
@@ -187,6 +187,17 @@ class Treaty(ObjectNormalizer):
             'events': [c for c in data.keys() if c != 'country'],
         }
         return ret
+
+    def parties(self):
+        PARTY_FIELDS = [
+            'partyCountry', 'partyPotentialParty',
+            'partyDateOfAccessionApprobation', 'partyEntryIntoForce',
+        ]
+        d = {f: self.solr.get(f) for f in PARTY_FIELDS}
+        if not d:
+            return []
+        count = len(d[PARTY_FIELDS[0]])
+        return [{k: v[i] for k, v in d.items() if v} for i in range(count)]
 
     def get_references_ids_set(self):
         ids = set()

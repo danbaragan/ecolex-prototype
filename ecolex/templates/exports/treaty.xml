@@ -1,0 +1,96 @@
+<document>
+  <db>tre</db>
+  <Recid>{{ document.solr.trElisId }}</Recid>
+  <dateOfEntry>{{ document.solr.trDateOfEntry }}</dateOfEntry>
+  <dateOfModification>{{ document.solr.trDateOfModification }}</dateOfModification>
+  <titleOfText>
+    <![CDATA[{{ document.solr.trPaperTitleOfText_en }}]]>
+  </titleOfText>
+  <titleOfText_fr_FR>
+    <![CDATA[{{ document.solr.trPaperTitleOfText_fr }}]]>
+  </titleOfText_fr_FR>
+  <titleOfText_es_ES>
+    <![CDATA[{{ document.solr.trPaperTitleOfText_es }}]]>
+  </titleOfText_es_ES>
+  <titleOfTextOther>
+    <![CDATA[{{ document.solr.trPaperTitleOfText_other }}]]>
+  </titleOfTextOther>
+  <typeOfText>{{ document.solr.trTypeOfText_en }}</typeOfText>
+  <typeOfText_fr_FR>{{ document.solr.trTypeOfText_fr }}</typeOfText_fr_FR>
+  <typeOfText_es_ES>{{ document.solr.trTypeOfText_es }}</typeOfText_es_ES>
+  <jurisdiction>{{ document.solr.trJurisdiction_en }}</jurisdiction>
+  <jurisdiction_fr_FR>{{ document.solr.trJurisdiction_fr }}</jurisdiction_fr_FR>
+  <jurisdiction_es_ES>{{ document.solr.trJurisdiction_es }}</jurisdiction_es_ES>
+  <fieldOfApplication>{{ document.solr.trFieldOfApplication_en }}</fieldOfApplication>
+  <fieldOfApplication_fr_FR>{{ document.solr.trFieldOfApplication_fr }}</fieldOfApplication_fr_FR>
+  <fieldOfApplication_es_ES>{{ document.solr.trFieldOfApplication_es }}</fieldOfApplication_es_ES>
+  {% comment %}
+  <sortFieldOfApplication>{{ document.solr }}</sortFieldOfApplication>
+  {% endcomment %}
+  <subject><![CDATA[{{ document.solr.trSubject_en }}]]></subject>
+  <subject_fr_FR><![CDATA[{{ document.solr.trSubject_fr }}]]></subject_fr_FR>
+  <subject_es_ES><![CDATA[{{ document.solr.trSubject_es }}]]></subject_es_ES>
+  <languageOfDocument>{{ document.solr.trLanguageOfDocument_en }}</languageOfDocument>
+  <languageOfDocument_fr_FR>{{ document.solr.trLanguageOfDocument_fr }}</languageOfDocument_fr_FR>
+  <languageOfDocument_es_ES>{{ document.solr.trLanguageOfDocument_es }}</languageOfDocument_es_ES>
+  <placeOfAdoption>{{ document.solr.trPlaceOfAdoption }}</placeOfAdoption>
+  <depository><![CDATA[{{ document.solr.trDepository_en }}]]></depository>
+  <depository_fr_FR><![CDATA[{{ document.solr.trDepository_fr }}]]></depository_fr_FR>
+  <depository_es_ES><![CDATA[{{ document.solr.trDepository_es }}]]></depository_es_ES>
+  <dateOfText>{{ document.solr.trDateOfText }}</dateOfText>
+  <searchDate>{{ document.solr.trSearchDate }}</searchDate>
+  <entryIntoForceDate>{{ document.solr.trEntryIntoForceDate }}</entryIntoForceDate>
+  <obsolete>{{ document.solr.trObsolete }}</obsolete>
+  <officialPublication>
+    <![CDATA[{{ document.solr.trOfficialPublication }}]]>
+  </officialPublication>
+  <availableIn><![CDATA[{{ document.solr.trAvailableIn }}]]></availableIn>
+  <linkToFullText>
+    <![CDATA[{{ document.solr.trLinkToFullText_en }}]]>
+  </linkToFullText>
+  <linkToFullTextFr>
+    <![CDATA[{{ document.solr.trLinkToFullText_fr }}]]>
+  </linkToFullTextFr>
+  <linkToFullTextSp>
+    <![CDATA[{{ document.solr.trLinkToFullText_es }}]]>
+  </linkToFullTextSp>
+  <linkToFullTextOther>
+    <![CDATA[{{ document.solr.trLinkToFullText_other }}]]>
+  </linkToFullTextOther>
+  {% comment %}
+  <relatedWebSite>
+      <![CDATA[www.lusakaagreement.org/]]>
+  </relatedWebSite>
+  {% endcomment %}
+  {% for keyword in document.solr.trKeyword_en %}
+    <keyword><![CDATA[{{ keyword }}]]></keyword>
+  {% endfor %}
+  {% for keyword in document.solr.trKeyword_fr %}
+    <keyword_fr_FR><![CDATA[{{ keyword }}]]></keyword_fr_FR>
+  {% endfor %}
+  {% for keyword in document.solr.trKeyword_es %}
+    <keyword_es_ES><![CDATA[{{ keyword }}]]></keyword_es_ES>
+  {% endfor %}
+  <abstract>
+    <![CDATA[{{ document.solr.trAbstract_en }}]]>
+  </abstract>
+  <abstractFr>
+    <![CDATA[{{ document.solr.trAbstract_fr }}]]>
+  </abstractFr>
+  <abstractSp>
+    <![CDATA[{{ document.solr.trAbstract_es }}]]>
+  </abstractSp>
+  <citesTreaty>{{ document.solr.trElisId }}</citesTreaty>
+  {% for party in document.parties %}
+  <party>
+    <potentialParty>{{ party.partyPotentialParty }}</potentialParty>
+    <country>{{ party.partyCountry }}</country>
+    {% comment %}
+    <countryFr></countryFr>
+    <countrySp></countrySp>
+    {% endcomment %}
+    <dateOfAccessionApprobation>{{ party.partyDateOfAccessionApprobation }}</dateOfAccessionApprobation>
+    <entryIntoForce>{{ party.partyEntryIntoForce }}</entryIntoForce>
+  </party>
+  {% endfor %}
+</document>
