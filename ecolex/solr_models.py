@@ -103,7 +103,7 @@ class Treaty(ObjectNormalizer):
     SUMMARY_FIELD = 'trIntroText'
     TITLE_FIELDS = [
         'trPaperTitleOfText_en', 'trPaperTitleOfText_fr',
-        'trPaperTitleOfText_sp', 'trPaperTitleOfText_other',
+        'trPaperTitleOfText_es', 'trPaperTitleOfText_other',
         'trTitleOfTextShort',
     ]
     DATE_FIELDS = ['trDateOfText', 'trDateOfEntry', 'trDateOfModification']
@@ -266,14 +266,14 @@ class Decision(ObjectNormalizer):
 class Literature(ObjectNormalizer):
     ID_FIELD = 'litId'
     SUMMARY_FIELD = 'litAbstract'
-    TITLE_FIELDS = ['litLongTitle', 'litLongTitle_fr', 'litLongTitle_sp',
+    TITLE_FIELDS = ['litLongTitle_en', 'litLongTitle_fr', 'litLongTitle_es',
                     'litLongTitle_other',
-                    'litPaperTitleOfText', 'litPaperTitleOfText_fr',
-                    'litPaperTitleOfText_sp', 'litPaperTitleOfText_other',
-                    'litTitleOfTextShort', 'litTitleOfTextShort_fr',
-                    'litTitleOfTextShort_sp', 'litTitleOfTextShort_other',
-                    'litTitleOfTextTransl', 'litTitleOfTextTransl_fr',
-                    'litTitleOfTextTransl_sp']
+                    'litPaperTitleOfText_en', 'litPaperTitleOfText_fr',
+                    'litPaperTitleOfText_es', 'litPaperTitleOfText_other',
+                    'litTitleOfTextShort_en', 'litTitleOfTextShort_fr',
+                    'litTitleOfTextShort_es', 'litTitleOfTextShort_other',
+                    'litTitleOfTextTransl_en', 'litTitleOfTextTransl_fr',
+                    'litTitleOfTextTransl_es']
     DATE_FIELDS = ['litDateOfEntry', 'litDateOfModification']
     OPTIONAL_INFO_FIELDS = [
         ('litISBN', 'ISBN', ''),

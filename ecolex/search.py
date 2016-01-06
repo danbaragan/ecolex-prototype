@@ -202,9 +202,9 @@ def get_relevancy():
         'legTitle': 100,
         'legLongTitle': 100,
 
-        'litLongTitle': 100,
+        'litLongTitle_en': 100,
         'litLongTitle_fr': 100,
-        'litLongTitle_sp': 100,
+        'litLongTitle_es': 100,
         'litLongTitle_other': 100,
 
         'cdTitleOfText_en': 100,

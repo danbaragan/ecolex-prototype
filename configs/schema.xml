@@ -420,24 +420,24 @@
     <field name="litTitleAbbreviation" type="string" indexed="true" stored="true"/>
     <field name="litRelatedWebSite" type="string" indexed="false" stored="true"/>
 
-    <field name="litLongTitle" type="text" indexed="true" stored="true"/>
+    <field name="litLongTitle_en" type="text" indexed="true" stored="true"/>
     <field name="litLongTitle_fr" type="text" indexed="true" stored="true"/>
-    <field name="litLongTitle_sp" type="text" indexed="true" stored="true"/>
+    <field name="litLongTitle_es" type="text" indexed="true" stored="true"/>
     <field name="litLongTitle_other" type="text" indexed="true" stored="true"/>
 
-    <field name="litPaperTitleOfText" type="text" indexed="true" stored="true"/>
+    <field name="litPaperTitleOfText_en" type="text" indexed="true" stored="true"/>
     <field name="litPaperTitleOfText_fr" type="text" indexed="true" stored="true"/>
-    <field name="litPaperTitleOfText_sp" type="text" indexed="true" stored="true"/>
+    <field name="litPaperTitleOfText_es" type="text" indexed="true" stored="true"/>
     <field name="litPaperTitleOfText_other" type="text" indexed="true" stored="true"/>
 
-    <field name="litTitleOfTextShort" type="text" indexed="true" stored="true"/>
+    <field name="litTitleOfTextShort_en" type="text" indexed="true" stored="true"/>
     <field name="litTitleOfTextShort_fr" type="text" indexed="true" stored="true"/>
-    <field name="litTitleOfTextShort_sp" type="text" indexed="true" stored="true"/>
+    <field name="litTitleOfTextShort_es" type="text" indexed="true" stored="true"/>
     <field name="litTitleOfTextShort_other" type="text" indexed="true" stored="true"/>
 
-    <field name="litTitleOfTextTransl" type="text" indexed="true" stored="true"/>
+    <field name="litTitleOfTextTransl_en" type="text" indexed="true" stored="true"/>
     <field name="litTitleOfTextTransl_fr" type="text" indexed="true" stored="true"/>
-    <field name="litTitleOfTextTransl_sp" type="text" indexed="true" stored="true"/>
+    <field name="litTitleOfTextTransl_es" type="text" indexed="true" stored="true"/>
 
     <field name="litSerialTitle" type="string" indexed="true" stored="true"/>
     <field name="litISBN" type="string" indexed="false" stored="true"/>
@@ -448,50 +448,50 @@
     <field name="litDateOfText" type="string" indexed="false" stored="true"/>
     <field name="litLinkToFullText" type="string" indexed="false" stored="true"/>
 
-    <field name="litTypeOfText" type="string" indexed="true" stored="true"/>
+    <field name="litTypeOfText_en" type="string" indexed="true" stored="true"/>
     <field name="litTypeOfText_fr" type="string" indexed="true" stored="true"/>
-    <field name="litTypeOfText_sp" type="string" indexed="true" stored="true"/>
+    <field name="litTypeOfText_es" type="string" indexed="true" stored="true"/>
 
-    <field name="litLanguageOfDocument" type="string" indexed="true" stored="true"/>
+    <field name="litLanguageOfDocument_en" type="string" indexed="true" stored="true"/>
     <field name="litLanguageOfDocument_fr" type="string" indexed="true" stored="true"/>
-    <field name="litLanguageOfDocument_sp" type="string" indexed="true" stored="true"/>
+    <field name="litLanguageOfDocument_es" type="string" indexed="true" stored="true"/>
 
-    <field name="litSubject" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litSubject_en" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litSubject_fr" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="litSubject_sp" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litSubject_es" type="string" indexed="true" stored="true" multiValued="true"/>
 
-    <field name="litKeyword" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="litKeyword_en" type="text" indexed="true" stored="true" multiValued="true"/>
     <field name="litKeyword_fr" type="text" indexed="true" stored="true" multiValued="true"/>
-    <field name="litKeyword_sp" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="litKeyword_es" type="text" indexed="true" stored="true" multiValued="true"/>
 
-    <field name="litScope" type="text" indexed="true" stored="true"/>
+    <field name="litScope_en" type="text" indexed="true" stored="true"/>
     <field name="litScope_fr" type="text" indexed="true" stored="true"/>
-    <field name="litScope_sp" type="text" indexed="true" stored="true"/>
+    <field name="litScope_es" type="text" indexed="true" stored="true"/>
 
-    <field name="litIntOrg" type="string" indexed="false" stored="true"/>
+    <field name="litIntOrg_en" type="string" indexed="false" stored="true"/>
     <field name="litIntOrg_fr" type="string" indexed="false" stored="true"/>
-    <field name="litIntOrg_sp" type="string" indexed="false" stored="true"/>
+    <field name="litIntOrg_es" type="string" indexed="false" stored="true"/>
 
-    <field name="litCountry" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litCountry_en" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litCountry_fr" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="litCountry_sp" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litCountry_es" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litDisplayTitle" type="text" indexed="true" stored="true"/>
     <field name="litDisplayDetails" type="text" indexed="true" stored="true"/>
-    <field name="litDisplayRegion" type="text" indexed="true" stored="true"/>
+    <field name="litDisplayRegion_en" type="text" indexed="true" stored="true"/>
     <field name="litDisplayRegion_fr" type="text" indexed="true" stored="true"/>
-    <field name="litDisplayRegion_sp" type="text" indexed="true" stored="true"/>
+    <field name="litDisplayRegion_es" type="text" indexed="true" stored="true"/>
 
-    <field name="litLanguageOfTranslation" type="string" indexed="false" stored="true"/>
+    <field name="litLanguageOfTranslation_en" type="string" indexed="false" stored="true"/>
     <field name="litLanguageOfTranslation_fr" type="string" indexed="false" stored="true"/>
-    <field name="litLanguageOfTranslation_sp" type="string" indexed="false" stored="true"/>
+    <field name="litLanguageOfTranslation_es" type="string" indexed="false" stored="true"/>
 
-    <field name="litRegion" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litRegion_en" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litRegion_fr" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="litRegion_sp" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litRegion_es" type="string" indexed="true" stored="true" multiValued="true"/>
 
-    <field name="litAbstract" type="text" indexed="true" stored="true"/>
+    <field name="litAbstract_en" type="text" indexed="true" stored="true"/>
     <field name="litAbstract_fr" type="text" indexed="true" stored="true"/>
-    <field name="litAbstract_sp" type="text" indexed="true" stored="true"/>
+    <field name="litAbstract_es" type="text" indexed="true" stored="true"/>
     <field name="litAbstract_other" type="text" indexed="true" stored="true"/>
     <field name="litLinkToAbstract" type="string" indexed="false" stored="true"/>
 
@@ -509,25 +509,25 @@
     <field name="litISSN" type="string" indexed="false" stored="true"/>
     <field name="relatedwebsite" type="string" indexed="false" stored="true"/>
 
-    <field name="litConfName" type="text" indexed="true" stored="true"/>
+    <field name="litConfName_en" type="text" indexed="true" stored="true"/>
     <field name="litConfName_fr" type="text" indexed="true" stored="true"/>
-    <field name="litConfName_sp" type="text" indexed="true" stored="true"/>
+    <field name="litConfName_es" type="text" indexed="true" stored="true"/>
     <field name="litConfName_other" type="text" indexed="true" stored="true"/>
     <field name="litConfNo" type="string" indexed="false" stored="true"/>
     <field name="litConfPlace" type="string" indexed="false" stored="true"/>
     <field name="litConfDate" type="string" indexed="false" stored="true"/>
 
     <field name="litDateOfTextSer" type="string" indexed="false" stored="true"/>
-    <field name="litTerritorialSubdivision" type="string" indexed="false" stored="true"/>
+    <field name="litTerritorialSubdivision_en" type="string" indexed="false" stored="true"/>
     <field name="litTerritorialSubdivision_fr" type="string" indexed="false" stored="true"/>
-    <field name="litTerritorialSubdivision_sp" type="string" indexed="false" stored="true"/>
+    <field name="litTerritorialSubdivision_es" type="string" indexed="false" stored="true"/>
     <field name="litEdition" type="string" indexed="false" stored="true"/>
     <field name="litCallNo" type="string" indexed="false" stored="true"/>
     <field name="litRelatedMonograph" type="string" indexed="false" stored="true"/>
 
-    <field name="litBasin" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litBasin_en" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litBasin_fr" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="litBasin_sp" type="string" indexed="true" stored="true" multiValued="true"/>
+    <field name="litBasin_es" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litInternetReference" type="string" indexed="false" stored="true"/>
     <field name="litTreatyReference" type="string" indexed="true" stored="true" multiValued="true"/>
     <field name="litCourtDecisionReference" type="string" indexed="true" stored="true" multiValued="true"/>
@@ -586,9 +586,9 @@
     <copyField source="cdCountry_es" dest="docCountry"/>
     <copyField source="cdCountry_fr" dest="docCountry"/>
 
-    <copyField source="litCountry" dest="docCountry"/>
+    <copyField source="litCountry_en" dest="docCountry"/>
     <copyField source="litCountry_fr" dest="docCountry"/>
-    <copyField source="litCountry_sp" dest="docCountry"/>
+    <copyField source="litCountry_es" dest="docCountry"/>
 
     <copyField source="legCountry_en" dest="docCountry"/>
     <copyField source="legCountry_fr" dest="docCountry"/>
@@ -597,9 +597,9 @@
 
     <copyField source="trRegion" dest="docRegion"/>
     <copyField source="cdRegion" dest="docRegion"/>
-    <copyField source="litRegion" dest="docRegion"/>
+    <copyField source="litRegion_en" dest="docRegion"/>
     <copyField source="litRegion_fr" dest="docRegion"/>
-    <copyField source="litRegion_sp" dest="docRegion"/>
+    <copyField source="litRegion_es" dest="docRegion"/>
     <copyField source="legGeoArea_en" dest="docRegion"/>
     <copyField source="legGeoArea_fr" dest="docRegion"/>
     <copyField source="legGeoArea_es" dest="docRegion"/>
@@ -611,9 +611,9 @@
 
     <copyField source="trLanguageOfDocument_en" dest="docLanguage"/>
     <copyField source="cdLanguageOfDocument" dest="docLanguage"/>
-    <copyField source="litLanguageOfDocument" dest="docLanguage"/>
+    <copyField source="litLanguageOfDocument_en" dest="docLanguage"/>
     <copyField source="litLanguageOfDocument_fr" dest="docLanguage"/>
-    <copyField source="litLanguageOfDocument_sp" dest="docLanguage"/>
+    <copyField source="litLanguageOfDocument_es" dest="docLanguage"/>
     <copyField source="legLanguage_en" dest="docLanguage"/>
     <copyField source="legLanguage_fr" dest="docLanguage"/>
     <copyField source="legLanguage_es" dest="docLanguage"/>
@@ -645,9 +645,9 @@
     <copyField source="trKeyword_fr" dest="text"/>
     <copyField source="doc_content" dest="text"/>
 
-    <copyField source="litLongTitle" dest="text"/>
+    <copyField source="litLongTitle_en" dest="text"/>
     <copyField source="litLongTitle_fr" dest="text"/>
-    <copyField source="litLongTitle_sp" dest="text"/>
+    <copyField source="litLongTitle_es" dest="text"/>
     <copyField source="litLongTitle_other" dest="text"/>
 
 </schema>
